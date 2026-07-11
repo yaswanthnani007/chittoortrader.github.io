@@ -1,4 +1,4 @@
-// Gentle reveal-on-scroll for the ledger sections.
+// Gentle reveal-on-scroll for the case-file sections.
 // No frameworks — this is a static site by design.
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,15 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealables.forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(16px)';
-    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    el.style.transform = 'translateY(18px) rotate(-0.4deg)';
+    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
   });
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+        entry.target.style.transform = 'translateY(0) rotate(0deg)';
         io.unobserve(entry.target);
       }
     });

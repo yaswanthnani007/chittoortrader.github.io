@@ -1,17 +1,28 @@
 # Chittoor Trader
 
-A single-page static website for **Yashwanth G** — a personal trading ledger
-covering his story, his 90% psychology / 10% strategy philosophy, his trading
-rules, and his two biggest influences: Jesse Livermore and Mark Douglas.
+A single-page static website for **Yashwanth G** — a personal trading case
+file covering his story, his 90% psychology / 10% strategy philosophy, his
+trading rules, and his two biggest influences: Jesse Livermore and Mark
+Douglas.
+
+## Design
+
+The theme is a dark, unsettling "case file" identity: a near-black
+background, flickering neon-red hero name (Nosifer font), a cracked-glass
+overlay, hazard-tape ticker, film grain, and dossier/mugshot-style photo
+framing. It's inspired by the chaotic, anarchic energy of Joker from *The
+Dark Knight* — but it does **not** reproduce his actual copyrighted likeness,
+the movie's branding, or any Warner Bros./DC-owned material. Everything here
+(fonts, colors, crack graphic, tape pattern) is original.
 
 ## Files
 
 ```
 chittoortrader/
 ├── index.html      → all page content
-├── style.css       → the ledger/ticker-tape visual design
+├── style.css       → the case-file / horror visual design
 ├── script.js       → small scroll-reveal effect (no dependencies)
-├── assets/         → empty on purpose, see assets/README.txt
+├── assets/         → your photos + notes, see assets/README.txt
 └── README.md       → this file
 ```
 
@@ -19,6 +30,9 @@ It's 100% static — no build step, no framework, no server required.
 
 ## Image licensing notes
 
+- **Your photo** (converted from the HEIC you uploaded) is used twice: a
+  circular badge in the hero, and a larger "dossier" shot in the Story
+  section.
 - **Jesse Livermore's photo** is loaded directly from Wikimedia Commons
   (a public-domain 1940 press photo), so nothing needs to be uploaded.
 - **Mark Douglas** has no known freely-licensed photo available online, so
