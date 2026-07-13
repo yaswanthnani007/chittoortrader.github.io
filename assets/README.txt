@@ -8,10 +8,16 @@
   replace these two files with the same filenames (or update the <img src>
   paths in index.html) — a roughly square photo works best for the badge,
   and a portrait-orientation photo works best for the dossier shot.
-- Jesse Livermore's photo is hotlinked directly from Wikimedia Commons
-  (public domain, 1940 press photo), so no local file is needed for him.
-- Mark Douglas has no known freely-licensed photo available, so the site
-  uses a designed "MD" monogram card instead of a copyrighted photo. If you
-  obtain a licensed photo of him, drop it in here (e.g. mark-douglas.jpg)
-  and update the Mentors section in index.html to use an <img> tag the same
-  way Jesse Livermore's card does.
+- jesse-livermore.jpg / mark-douglas.jpg — the clean, cropped portraits used
+  in the Mentors card photos (no text baked in).
+- livermore-clipping.jpg / douglas-clipping.jpg — the original quote-card
+  graphics you supplied, used uncropped (quotes intact) in the "Two
+  Clippings I Keep Close" section. Worth confirming you're clear to publish
+  these — they look sourced from third-party trading blogs/graphics.
+- yashwanth-badge.jpg / yashwanth-portrait.jpg — your photo (from
+  IMG_3836.HEIC), used for the circular hero badge and the Story section
+  feature photo respectively.
+- All mentor/clipping photos get the same warm sepia-ish treatment via CSS
+  automatically, so they match the cream theme without manual editing.
+- To swap any of these later, replace the file (same filename) or update
+  the relevant <img src> in index.html.

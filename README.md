@@ -1,26 +1,30 @@
 # Chittoor Trader
 
-A single-page static website for **Yashwanth G** — a personal trading case
-file covering his story, his 90% psychology / 10% strategy philosophy, his
+A single-page static website for **Yashwanth G** — a personal "born to win"
+record covering his story, his 90% psychology / 10% strategy philosophy, his
 trading rules, and his two biggest influences: Jesse Livermore and Mark
 Douglas.
 
 ## Design
 
-The theme is a dark, unsettling "case file" identity: a near-black
-background, flickering neon-red hero name (Nosifer font), a cracked-glass
-overlay, hazard-tape ticker, film grain, and dossier/mugshot-style photo
-framing. It's inspired by the chaotic, anarchic energy of Joker from *The
-Dark Knight* — but it does **not** reproduce his actual copyrighted likeness,
-the movie's branding, or any Warner Bros./DC-owned material. Everything here
-(fonts, colors, crack graphic, tape pattern) is original.
+The theme is warm and optimistic: a cream/ivory background, deep forest
+green + gold accents, and an ascending "breakout chart line" as the visual
+signature — the dip-then-breakout line in the hero doubles as a graphic of
+the comeback story itself. Photo frames use a soft warm tone instead of the
+harsh grayscale treatment of the old identity. Typefaces are Fraunces
+(display serif) and Manrope (body), with IBM Plex Mono for small data-style
+labels.
+
+This replaces the earlier dark "case file" identity. If you ever want that
+version back, it's recoverable from your GitHub history (or ask and it can
+be rebuilt).
 
 ## Files
 
 ```
 chittoortrader/
 ├── index.html      → all page content
-├── style.css       → the case-file / horror visual design
+├── style.css       → the cream / "born to win" visual design
 ├── script.js       → small scroll-reveal effect (no dependencies)
 ├── assets/         → your photos + notes, see assets/README.txt
 └── README.md       → this file
@@ -33,12 +37,13 @@ It's 100% static — no build step, no framework, no server required.
 - **Your photo** (converted from the HEIC you uploaded) is used twice: a
   circular badge in the hero, and a larger "dossier" shot in the Story
   section.
-- **Jesse Livermore's photo** is loaded directly from Wikimedia Commons
-  (a public-domain 1940 press photo), so nothing needs to be uploaded.
-- **Mark Douglas** has no known freely-licensed photo available online, so
-  the site shows a designed "MD" monogram card instead of risking a
-  copyrighted image. See `assets/README.txt` for how to swap in a licensed
-  photo later if you get one.
+- **Jesse Livermore's and Mark Douglas's photos** are local files
+  (`assets/jesse-livermore.jpg`, `assets/mark-douglas.jpg`), cropped from
+  the images you supplied down to a clean portrait with no text or logos
+  baked in. Worth double-checking you're clear to publish the source images
+  before this goes live — the Livermore crop came from a third-party
+  trading-blog graphic, and the Douglas one from a separate portrait.
+- See `assets/README.txt` for how to swap either photo later.
 - The **Trading in the Zone** book cover is an original CSS illustration,
   not a scan of the real (copyrighted) book cover.
 
