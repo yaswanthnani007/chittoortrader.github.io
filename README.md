@@ -121,17 +121,28 @@ Then follow step 4 above to switch on Pages.
 
 ---
 
-## Adding a custom domain later (optional, not required now)
+## Custom domain: chittoortrader.com
 
-Whenever you do buy a domain (e.g. `chittoortrader.com`):
-1. In **Settings → Pages**, enter it under **Custom domain** and save.
-   GitHub will create a `CNAME` file in your repo automatically.
-2. At your domain registrar, add these DNS records:
-   - Four `A` records for the apex domain pointing to GitHub's IPs:
+This repo is now wired up for `chittoortrader.com` (registered via Cloudflare).
+A `CNAME` file containing `chittoortrader.com` has been added to the repo
+root — GitHub Pages requires this file to know which domain to serve.
+
+To finish the setup:
+
+1. **Push this repo** (including the new `CNAME` file) to
+   `github.com/yaswanthnani007/chittoortrader.github.io`.
+2. In the repo, go to **Settings → Pages** and confirm `chittoortrader.com`
+   appears under **Custom domain** (GitHub reads it from the `CNAME` file
+   automatically once pushed — you can also type it in manually and Save).
+3. At **Cloudflare** (in the domain's DNS tab), add these records:
+   - Four `A` records, name `@`, pointing to GitHub's IPs:
      `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - A `CNAME` record for `www` pointing to `YOUR-USERNAME.github.io`
-3. Wait for DNS to propagate (can take a few hours), then check
-   **Enforce HTTPS** back in the Pages settings.
-
-You don't need to do any of this today — the free `github.io` URL works
-immediately and is a normal way to host a personal site long-term.
+   - A `CNAME` record, name `www`, pointing to
+     `yaswanthnani007.github.io`
+   - Set these records to **DNS only** (grey cloud, not orange/proxied) at
+     first, so GitHub can issue an SSL certificate. You can switch to
+     proxied (orange cloud) afterward if you want Cloudflare's CDN/security
+     features.
+4. Wait for DNS to propagate (usually minutes, sometimes a few hours), then
+   go back to **Settings → Pages** and check **Enforce HTTPS**.
+5. Visit `https://chittoortrader.com` — it should now show your site.
