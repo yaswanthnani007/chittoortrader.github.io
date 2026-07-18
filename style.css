@@ -66,8 +66,10 @@ a{ color:inherit; }
 .nav__mark{
   font-family:var(--serif); font-weight:900; font-size:19px;
   letter-spacing:0.02em; text-decoration:none; color:var(--espresso);
+  display:flex; align-items:center;
 }
 .nav__mark span{ color:var(--forest); }
+.nav__logo-img{ height:32px; width:auto; display:block; }
 .nav__links{ display:flex; gap:28px; }
 .nav__links a{
   font-family:var(--sans); font-weight:600; font-size:14px;
