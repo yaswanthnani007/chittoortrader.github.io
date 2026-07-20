@@ -19,16 +19,23 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,900;1,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,900;1,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="nav">
-  <a href="#top" class="nav__mark"><img src="assets/logo-wide.png" alt="Chittoor Trader" class="nav__logo-img"></a>
+  <a href="#top" class="nav__mark">
+    <span class="nav__mark-icon">
+      <img src="assets/logo-white.png" alt="" class="nav__mark-icon-img">
+    </span>
+    <span class="nav__mark-text">
+      <span class="nav__mark-name">ChittoorTrader</span>
+      <span class="nav__mark-caption">Born to Win</span>
+    </span>
+  </a>
   <nav class="nav__links">
-    <a href="#story">Story</a>
-    <a href="#philosophy">Philosophy</a>
+    <a href="#roadmap">The Book</a>
     <a href="#rules">Rules</a>
     <a href="#mentors">Mentors</a>
     <a href="#book">Books</a>
@@ -37,136 +44,81 @@
 
 <main id="top">
 
-  <!-- HERO -->
-  <section class="hero">
-    <svg class="hero__chart" viewBox="0 0 1000 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="chartGradient" gradientUnits="userSpaceOnUse" x1="380" y1="0" x2="980" y2="0">
-          <stop offset="0" stop-color="#C99A3D"/>
-          <stop offset="1" stop-color="#E7BE64"/>
-        </linearGradient>
-        <filter id="chartGlow" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="7" result="blur"/>
-          <feMerge>
-            <feMergeNode in="blur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-      <line x1="0" y1="230" x2="1000" y2="230" stroke="rgba(43,33,24,0.10)" stroke-width="1.5" stroke-dasharray="2 8"/>
-      <polyline points="0,200 70,230 130,210 190,260 250,240 300,290 340,270 380,330 410,352 450,322 490,340 530,292 570,252 610,262 650,204 690,214 730,152 770,162 810,102 850,112 890,58 930,68 970,18"
-        fill="none" stroke="url(#chartGradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#chartGlow)" opacity="0.9"/>
-      <circle cx="410" cy="352" r="5.5" fill="#C99A3D" opacity="0.85"/>
-      <circle cx="970" cy="18" r="8.5" fill="#1F6D45" filter="url(#chartGlow)"/>
-    </svg>
+  <!-- ROADMAP TO TRADING SUCCESS — BOOK ARTICLE -->
+  <section id="roadmap" class="section article-section">
+    <p class="section__eyebrow">The Book</p>
+    <h2 class="section__title">RoadMap to Trading Success</h2>
+    <p class="section__lede">A personal account of ego, revenge, fear, patience and control — and how each one, in its turn, rewrote the way I trade.</p>
 
-    <div class="hero__inner">
-      <p class="eyebrow">Chittoor, India &nbsp;·&nbsp; Est. 09.01.1994</p>
-      <h1 class="hero__name">Yashwanth&nbsp;G</h1>
-      <p class="hero__tagline">Born to win. Built to become <strong>successful</strong> — one disciplined trade at a time.</p>
-      <div class="hero__row">
-        <div class="badge">
-          <img src="assets/yashwanth-badge.jpg" alt="Yashwanth G" loading="lazy">
-        </div>
-        <div class="hero__meta">
-          <span class="mono">TRADER · BASED IN CHITTOOR</span>
-          <span class="mono">ON THE COMEBACK, BUILT TO LAST</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero__stat">
-      <span class="hero__stat-num">90<span class="unit">%</span></span>
-      <span class="hero__stat-label">Psychology</span>
-    </div>
-  </section>
+    <article class="article">
+      <p class="article__intro"><span class="article__dropcap">I</span>&nbsp;have started my trading career during 2020 COVID outbreak with the thought of buying stocks for low price. Which laid the foundation to enter into trading arena. I have entered with the wrong thinking that "Let's give it a try", instead of taking it a serious profession where even the smartest minds struggle to keep money which was made. I hoped to become financially independent soon. Which slowly hit me with a hammer to wake up. By the time I realised I was in debt with a loan I was struggling repay.</p>
 
-  <!-- TICKER -->
-  <div class="ticker" role="marquee" aria-label="Trading wisdom ticker">
-    <div class="ticker__track">
-      <span class="ticker__seq"></span>
-      <span class="ticker__seq" aria-hidden="true"></span>
-    </div>
-  </div>
-
-  <!-- STORY -->
-  <section id="story" class="section">
-    <p class="section__eyebrow">The Comeback</p>
-    <h2 class="section__title">The Story So Far</h2>
-
-    <div class="story">
-      <figure class="story__photo">
-        <img src="assets/yashwanth-portrait.jpg" alt="Yashwanth G" loading="lazy">
-        <span class="story__photo-tag">Yashwanth G</span>
-      </figure>
-
-      <div class="ledger">
-        <div class="ledger__row">
-          <p class="ledger__date mono">09 JAN 1994</p>
-          <div class="ledger__content">
-            <h3>Born in Chittoor</h3>
-            <p>No trading floor in sight, no idea yet that the market would become the mirror I'd spend a lifetime looking into.</p>
+      <div class="article__chapter">
+        <span class="article__num mono">00</span>
+        <h3>90% Psychology. <span class="accent">10% Strategy.</span></h3>
+        <div class="split article__split">
+          <div class="split__visual" aria-hidden="true">
+            <div class="split__bar">
+              <div class="split__bar-fill" style="--fill:90%">
+                <span class="split__bar-label">Psychology<br><strong>90%</strong></span>
+              </div>
+              <div class="split__bar-rest">
+                <span class="split__bar-label">Strategy<br><strong>10%</strong></span>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="ledger__row">
-          <p class="ledger__date mono">7+ YRS IN TECH</p>
-          <div class="ledger__content">
-            <h3>Building software by day, studying markets by night</h3>
-            <p>iOS Developer and SDET became the day job — the same instinct that hunts down bugs before they ship started hunting for edges in Indian equities and forex instead. Three years into trading both, it stopped being a side project. It became the thing I actually wanted to do full time.</p>
-          </div>
-        </div>
-
-        <div class="ledger__row">
-          <p class="ledger__date mono">AGE 32</p>
-          <div class="ledger__content">
-            <h3>Broke — financially and emotionally</h3>
-            <p>The account went first. Then the confidence, the sleep, the certainty that I understood what I was doing. It's one thing to lose money. It's another to lose your sense of self along with it. That year I lost both — and quietly started building the version of me that wouldn't lose them again.</p>
-          </div>
-        </div>
-
-        <div class="ledger__row ledger__row--peak">
-          <p class="ledger__date mono">NOW &amp; NEXT</p>
-          <div class="ledger__content">
-            <h3>Built to win, on purpose this time</h3>
-            <p>Not chasing a bigger win to erase the last one — that's exactly the trap that put me here. This time I'm compounding the only edge that actually lasts: a disciplined mind, rules I follow even when I don't feel like it, and the belief that I was always going to figure this out.</p>
+          <div class="split__text">
+            <p>A strategy can get you into a good trade. Only your psychology decides whether you actually follow it, whether you cut the loss you said you'd cut, and whether you take the profit you planned to take instead of hoping for more.</p>
+            <p>Almost nobody blows up an account because their setup was wrong. They blow up because fear closed a winner too early, greed held a loser too long, or revenge trading tried to claw back in an hour what took a month to build.</p>
+            <p class="pull-quote">Strategy tells you what to do. Psychology decides if you'll actually do it.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- MANTRAS -->
-  <section class="section mantras">
-    <p class="section__eyebrow">What I Tell Myself</p>
-    <div class="mantras__list">
-      <p class="mantras__line">The best revenge is <span class="accent">your success.</span></p>
-      <hr class="mantras__rule">
-      <p class="mantras__line">Patience is your deadliest weapon.</p>
-    </div>
-  </section>
-
-  <!-- PHILOSOPHY -->
-  <section id="philosophy" class="section section--tint">
-    <p class="section__eyebrow">Case for Discipline</p>
-    <h2 class="section__title">90% Psychology. <span class="accent">10% Strategy.</span></h2>
-
-    <div class="split">
-      <div class="split__visual" aria-hidden="true">
-        <div class="split__bar">
-          <div class="split__bar-fill" style="--fill:90%">
-            <span class="split__bar-label">Psychology<br><strong>90%</strong></span>
-          </div>
-          <div class="split__bar-rest">
-            <span class="split__bar-label">Strategy<br><strong>10%</strong></span>
-          </div>
-        </div>
+      <div class="article__chapter">
+        <span class="article__num mono">01</span>
+        <h3>Why Trade?</h3>
+        <p>Every trader has an origin story, and mine begins in a locked-down house in 2020, watching prices fall and thinking it looked like an opportunity rather than a warning. Cheap stocks felt like a doorway to something better — faster, easier than the slow climb of a job. Nobody tells you at the start that trading isn't a bet you place once and collect on; it's a profession that quietly tests your character every single day, and it doesn't care how badly you need it to work.</p>
       </div>
-      <div class="split__text">
-        <p>A strategy can get you into a good trade. Only your psychology decides whether you actually follow it, whether you cut the loss you said you'd cut, and whether you take the profit you planned to take instead of hoping for more.</p>
-        <p>Almost nobody blows up an account because their setup was wrong. They blow up because fear closed a winner too early, greed held a loser too long, or revenge trading tried to claw back in an hour what took a month to build.</p>
-        <p class="pull-quote">Strategy tells you what to do. Psychology decides if you'll actually do it.</p>
+
+      <div class="article__chapter">
+        <span class="article__num mono">02</span>
+        <h3>The Ego</h3>
+        <p>The account grew, and so did the certainty that I'd figured something out that other people hadn't. That's the trap — a few good trades feel like proof of skill, when they're often just proof of luck wearing skill's clothes. Somewhere in there, being right stopped being about the money and started being about me. I wasn't managing risk anymore. I was defending an identity.</p>
       </div>
-    </div>
+
+      <div class="article__chapter">
+        <span class="article__num mono">03</span>
+        <h3>The Revenge</h3>
+        <p>When the market finally proved the ego wrong, I didn't step back — I stepped in harder. Bigger size, faster entries, no plan except the desperate need to get back what I'd just lost, right now. Revenge trading isn't a strategy; it's grief wearing a trading terminal, trying to undo the last hour instead of accepting it. It rarely gets the money back. It usually just adds to what's owed.</p>
+        <p class="pull-quote">The best revenge is your success.</p>
+      </div>
+
+      <div class="article__chapter">
+        <span class="article__num mono">04</span>
+        <h3>The Fear</h3>
+        <p>After enough of those spirals, the fear arrived — not as caution, but as paralysis. I started hesitating on setups I would once have taken without a second thought, cutting winners early out of a fear they'd turn into losses, and flinching at every red candle like it was aimed at me personally. Fear felt like the opposite of the recklessness before it, but it came from the exact same place: a nervous system that no longer trusted itself.</p>
+      </div>
+
+      <div class="article__chapter">
+        <span class="article__num mono">05</span>
+        <h3>The Patience</h3>
+        <p>Patience turned out to be the hardest skill in trading, because it isn't passive — it's the active discipline of doing nothing while everything in you wants to act. Waiting for the right setup instead of forcing a mediocre one. Sitting through boredom instead of manufacturing a trade to feel busy. I had to learn that the market rewards those willing to wait longer than it rewards those willing to work harder.</p>
+        <p class="pull-quote">Patience is your deadliest weapon.</p>
+      </div>
+
+      <div class="article__chapter">
+        <span class="article__num mono">06</span>
+        <h3>The Control</h3>
+        <p>I spent years trying to control the market — predicting it, outsmarting it, willing it to move my way. None of that was ever within reach. What was within reach, the whole time, was smaller and far more useful: my position size, my exit, my reaction to being wrong. The day I stopped trying to control the market and started controlling myself was the day the account stopped bleeding.</p>
+      </div>
+
+      <div class="article__chapter">
+        <span class="article__num mono">07</span>
+        <h3>Why Rules?</h3>
+        <p>A rule is just a decision made by the calmer version of me, left behind as instructions for the version who won't be calm later. Every chapter before this one is a story about what happens when there's nothing standing between an emotion and a trade. Rules are that thing. Not a cage — a rope handed to a future self who's about to be underwater.</p>
+      </div>
+    </article>
   </section>
 
   <!-- RULES -->
@@ -303,14 +255,23 @@
     </div>
   </section>
 
-  <!-- CLOSING -->
+  <!-- CLOSING + ABOUT THE AUTHOR -->
   <section class="closing">
     <svg width="64" height="34" viewBox="0 0 64 34" aria-hidden="true" style="margin:0 auto 18px;display:block;">
-      <path d="M4 26 L20 16 L32 22 L60 6" stroke="#1F6D45" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4 26 L20 16 L32 22 L60 6" stroke="#E6007E" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       <circle cx="60" cy="6" r="4.5" fill="#C99A3D"/>
     </svg>
     <p class="closing__line">Born to win. Still compounding, every day.</p>
     <p class="closing__sign mono">— Yashwanth G, Chittoor Trader</p>
+
+    <div id="about" class="article__author article__author--standalone">
+      <img src="assets/yashwanth-portrait.jpg" alt="Yashwanth G" loading="lazy">
+      <div class="article__author-text">
+        <p class="article__author-eyebrow mono">About the Author</p>
+        <h4>Yashwanth G</h4>
+        <p>Yashwanth G is a trader based in Chittoor, India, and the writer behind Chittoor Trader. A software engineer by training, he began trading Indian equities and forex in 2020 and spent years learning — the hard way — that psychology, not strategy, decides most outcomes in the market. <em>RoadMap to Trading Success</em> is his account of that education: the ego, the losses, the debt, and the rules he built to make sure the comeback stuck.</p>
+      </div>
+    </div>
   </section>
 
 </main>

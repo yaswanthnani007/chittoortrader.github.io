@@ -4,17 +4,17 @@
    signature. Replaces the earlier dark case-file identity.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,900;1,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,900;1,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
 
 :root{
-  --cream:        #FBF3E6;
-  --cream-deep:   #F2E3C6;
-  --paper:        #FFFCF5;
+  --cream:        #FFFFFF;
+  --cream-deep:   #F3F3F3;
+  --paper:        #FFFFFF;
   --espresso:     #2B2118;
   --espresso-70:  rgba(43,33,24,0.7);
   --espresso-50:  rgba(43,33,24,0.5);
-  --forest:       #1F6D45;
-  --forest-deep:  #144A2F;
+  --forest:       #E6007E;
+  --forest-deep:  #B8005F;
   --gold:         #C99A3D;
   --gold-bright:  #E7BE64;
   --bronze:       #8C5C1C; /* darker gold-family text, passes AA contrast on cream */
@@ -58,26 +58,45 @@ a{ color:inherit; }
 .nav{
   position:sticky; top:0; z-index:20;
   display:flex; align-items:center; justify-content:space-between;
-  padding:20px var(--edge);
-  background:rgba(251,243,230,0.88);
+  padding:14px clamp(20px, 3vw, 40px);
+  width:100%; margin:0;
+  border-radius:0;
+  background:#E6007E;
   backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line-soft);
+  border-bottom:1px solid rgba(0,0,0,0.12);
 }
 .nav__mark{
-  font-family:var(--serif); font-weight:900; font-size:19px;
-  letter-spacing:0.02em; text-decoration:none; color:var(--espresso);
-  display:flex; align-items:center;
+  display:flex; align-items:center; gap:12px;
+  text-decoration:none;
 }
-.nav__mark span{ color:var(--forest); }
-.nav__logo-img{ height:32px; width:auto; display:block; }
+.nav__mark-icon{
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.nav__mark-icon-img{ width:40px; height:40px; display:block; }
+.nav__mark-text{ display:flex; flex-direction:column; line-height:1.15; }
+.nav__mark-name{
+  font-family:var(--serif); font-weight:900; font-size:19px;
+  letter-spacing:0.01em; color:#FFFFFF;
+}
+.nav__mark-caption{
+  font-family:var(--sans); font-weight:800; font-size:9px;
+  letter-spacing:0.09em; text-transform:uppercase; color:#FFFFFF;
+  margin-top:2px;
+}
 .nav__links{ display:flex; gap:28px; }
 .nav__links a{
-  font-family:var(--sans); font-weight:600; font-size:14px;
-  text-decoration:none; color:var(--espresso-70);
+  font-family:var(--sans); font-weight:800; font-size:14px;
+  text-decoration:none; color:#FFFFFF;
   transition:color 0.2s ease;
 }
-.nav__links a:hover{ color:var(--forest); }
-@media (max-width:640px){ .nav__links{ gap:16px; } .nav__links a{ font-size:12.5px; } }
+.nav__links a:hover{ color:#2B2118; }
+@media (max-width:640px){
+  .nav__links{ gap:16px; }
+  .nav__links a{ font-size:12.5px; }
+  .nav__mark-name{ font-size:16px; }
+  .nav__mark-caption{ font-size:9.5px; }
+}
 
 /* ---------------- HERO ---------------- */
 .hero{
@@ -205,7 +224,7 @@ a{ color:inherit; }
   background:var(--gold); border:3px solid var(--cream);
   box-shadow:0 0 0 2px var(--gold);
 }
-.ledger__row--peak::before{ background:var(--forest); box-shadow:0 0 0 2px var(--forest), 0 0 12px rgba(31,109,69,0.5); }
+.ledger__row--peak::before{ background:var(--forest); box-shadow:0 0 0 2px var(--forest), 0 0 12px rgba(230,0,126,0.5); }
 .ledger__date{ font-size:12.5px; color:var(--forest); letter-spacing:0.06em; margin:0 0 6px; text-transform:uppercase; }
 .ledger__content h3{ font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 8px; color:var(--espresso); }
 .ledger__content p{ margin:0; color:var(--espresso-70); line-height:1.65; max-width:56ch; }
@@ -271,7 +290,7 @@ a{ color:inherit; }
 }
 .mentor-card__photo::after{
   content:""; position:absolute; inset:0;
-  background:linear-gradient(180deg, transparent 55%, rgba(20,74,47,0.28) 100%);
+  background:linear-gradient(180deg, transparent 55%, rgba(184,0,95,0.28) 100%);
   pointer-events:none;
 }
 .mentor-card__tag{
@@ -357,6 +376,7 @@ a{ color:inherit; }
   color:var(--espresso); margin:0 0 14px;
 }
 .closing__sign{ color:var(--forest); font-size:14px; letter-spacing:0.04em; }
+.closing .article__author--standalone{ text-align:left; }
 
 /* ---------------- FOOTER ---------------- */
 .footer{
@@ -364,3 +384,86 @@ a{ color:inherit; }
   padding:22px var(--edge); text-align:center;
 }
 .footer .mono{ font-size:11.5px; color:var(--espresso-50); letter-spacing:0.04em; }
+
+/* ---------------- ARTICLE (RoadMap to Trading Success) ---------------- */
+.article-section{ background:var(--paper); }
+.article{ max-width:720px; margin:0 auto; }
+
+.article__intro{
+  font-family:var(--serif); font-size:clamp(18px,2vw,21px); line-height:1.75;
+  color:var(--espresso); margin:0 0 56px; padding-bottom:40px;
+  border-bottom:1px solid var(--line);
+}
+.article__dropcap{
+  float:left; font-family:var(--serif); font-weight:900; font-size:64px;
+  line-height:0.8; padding:6px 8px 0 0; color:var(--forest);
+}
+
+.article__chapter{
+  position:relative; padding:0 0 40px 56px; margin-bottom:40px;
+  border-bottom:1px solid var(--line-soft);
+}
+.article__chapter:last-of-type{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.article__num{
+  position:absolute; left:0; top:2px; font-size:13px; font-weight:600;
+  color:var(--gold); letter-spacing:0.04em;
+}
+.article__chapter h3{
+  font-family:var(--serif); font-weight:700; font-size:clamp(21px,2.6vw,26px);
+  margin:0 0 12px; color:var(--espresso);
+}
+.article__chapter h3 .accent{ color:var(--forest); font-style:italic; font-weight:500; }
+.article__split{ margin-top:20px; }
+.article__chapter p{
+  margin:0; color:var(--espresso-70); line-height:1.75; font-size:16.5px;
+  max-width:62ch;
+}
+
+.article__author{
+  display:grid; grid-template-columns:96px 1fr; gap:22px; align-items:start;
+  margin-top:48px; padding-top:40px; border-top:2px solid var(--line);
+}
+.article__author img{
+  width:96px; height:96px; border-radius:50%; object-fit:cover;
+  border:2px solid var(--gold);
+}
+.article__author-eyebrow{
+  font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--forest); margin:0 0 6px;
+}
+.article__author-text h4{
+  font-family:var(--serif); font-weight:700; font-size:20px; margin:0 0 8px; color:var(--espresso);
+}
+.article__author-text p{ margin:0; color:var(--espresso-70); line-height:1.65; font-size:15px; }
+.article__author--standalone{ max-width:var(--max); margin:0 auto; }
+
+@media (max-width:640px){
+  .article__chapter{ padding-left:0; }
+  .article__num{ position:static; display:block; margin-bottom:8px; }
+  .article__author{ grid-template-columns:1fr; text-align:left; }
+  .article__author img{ margin-bottom:8px; }
+}
+
+/* ---------------- ABOUT THE AUTHOR (page end) ---------------- */
+.about-author__body{
+  display:grid; grid-template-columns:220px 1fr; gap:48px; align-items:start;
+  max-width:var(--max); margin:0 auto;
+}
+.about-author__photo{ margin:0; }
+.about-author__photo img{
+  width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:16px;
+  border:2px solid var(--gold); box-shadow:var(--shadow);
+}
+.about-author__text h3{
+  font-family:var(--serif); font-weight:700; font-size:26px; margin:0 0 6px; color:var(--espresso);
+}
+.about-author__role{
+  font-size:12.5px; letter-spacing:0.08em; color:var(--forest); margin:0 0 18px;
+}
+.about-author__text p{ color:var(--espresso-70); line-height:1.75; margin:0 0 16px; font-size:16px; }
+.about-author__text p:last-child{ margin-bottom:0; }
+
+@media (max-width:700px){
+  .about-author__body{ grid-template-columns:1fr; }
+  .about-author__photo{ max-width:160px; }
+}
