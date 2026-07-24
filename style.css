@@ -28,6 +28,8 @@
 
   --max: 1080px;
   --edge: clamp(20px, 5vw, 64px);
+  --nav-h: 64px;
+  --side-tabs-w: 208px;
 }
 
 *, *::before, *::after{ box-sizing:border-box; }
@@ -98,6 +100,58 @@ a{ color:inherit; }
   .nav__links a{ font-size:14.5px; }
   .nav__mark-name{ font-size:20px; }
   .nav__mark-caption{ font-size:8px; }
+}
+
+/* ---------------- SIDE TABS ---------------- */
+.side-tabs{
+  position:fixed; top:63px; left:0; bottom:0;
+  z-index:15;
+  display:flex; flex-direction:column;
+  gap:4px;
+  width:var(--side-tabs-w);
+  background:#FFFFFF;
+  border-right:1px solid var(--line);
+  padding:16px 12px;
+}
+.side-tabs__link{
+  display:flex; align-items:center; gap:12px;
+  padding:10px 12px;
+  text-decoration:none;
+  border-radius:10px;
+  transition:background 0.2s ease, color 0.2s ease;
+}
+.side-tabs__link:hover{ background:var(--cream-deep); }
+.side-tabs__link.is-active{ background:var(--forest); }
+.side-tabs__link.is-active .side-tabs__icon{ color:#FFFFFF; }
+.side-tabs__link.is-active .side-tabs__label{ color:#FFFFFF; }
+.side-tabs__icon{
+  width:20px; height:20px; flex-shrink:0;
+  color:var(--espresso-50);
+}
+.side-tabs__label{
+  font-family:var(--sans); font-weight:700; font-size:14px;
+  color:var(--espresso); white-space:nowrap;
+}
+@media (max-width:1100px){
+  body{ padding-bottom:64px; }
+  .side-tabs{
+    top:auto; bottom:0; left:0; right:0;
+    flex-direction:row; justify-content:center; align-items:center;
+    gap:8px;
+    width:100%; height:auto;
+    border-right:none; border-top:1px solid var(--line);
+    padding:8px 10px;
+  }
+  .side-tabs__link{ flex-direction:column; gap:4px; padding:6px 14px; }
+  .side-tabs__label{ font-size:11.5px; }
+}
+@media (max-width:520px){
+  .side-tabs__icon{ width:18px; height:18px; }
+  .side-tabs__link{ padding:6px 10px; }
+}
+main{ display:block; margin-left:var(--side-tabs-w); }
+@media (max-width:1100px){
+  main{ margin-left:0; }
 }
 
 /* ---------------- HERO ---------------- */
@@ -379,6 +433,10 @@ a{ color:inherit; }
 }
 .closing__sign{ color:var(--forest); font-size:14px; letter-spacing:0.04em; }
 .closing .article__author--standalone{ text-align:left; }
+.closing .article__author--standalone:first-child{
+  margin-top:0; padding-top:0; border-top:none;
+}
+.closing .article__author--standalone:first-child + svg{ margin-top:48px !important; }
 
 /* ---------------- FOOTER ---------------- */
 .footer{
@@ -388,7 +446,8 @@ a{ color:inherit; }
 .footer .mono{ font-size:11.5px; color:var(--espresso-50); letter-spacing:0.04em; }
 
 /* ---------------- ARTICLE (RoadMap to Trading Success) ---------------- */
-.article-section{ background:var(--paper); }
+.article-section{ background:var(--paper); padding-top:clamp(28px,4vw,40px); }
+.article-section > .section__title{ display:block; text-align:center; }
 .article{ max-width:720px; margin:0 auto; }
 
 .article__intro{
@@ -419,6 +478,11 @@ a{ color:inherit; }
 .article__chapter p{
   margin:0; color:var(--espresso-70); line-height:1.75; font-size:16.5px;
   max-width:62ch;
+}
+.article__chapter p + p{ margin-top:18px; }
+.chapter-cite{
+  font-size:13px; letter-spacing:0.06em; color:var(--gold);
+  margin:8px 0 24px !important; padding-left:21px;
 }
 
 .article__author{

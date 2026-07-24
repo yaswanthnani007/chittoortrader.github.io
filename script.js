@@ -28,4 +28,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.08 });
 
   revealables.forEach(el => io.observe(el));
+
+  // Highlight the active tab in the left side-tabs nav as the
+  // corresponding section scrolls into view.
+  const tabLinks = document.querySelectorAll('.side-tabs__link');
+  if (tabLinks.length) {
+    const targets = Array.from(tabLinks)
+      .map(link => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+
+    const setActive = (id) => {
+      tabLinks.forEach(link => {
+        link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+      });
+    };
+
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+    targets.forEach(el => spy.observe(el));
+  }
 });
